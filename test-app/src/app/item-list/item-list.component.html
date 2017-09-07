@@ -1,0 +1,22 @@
+<p align="center">
+    <marquee scrollamount="15">I'm fast!</marquee><br>
+    <marquee scrollamount="16">I'm faster!</marquee><br>
+    <marquee scrollamount="18">I'm fastest!</marquee><br>
+    <marquee scrollamount="135">I'm fastestest!!!</marquee>
+</p>
+
+<h1>Total items: {{totalItems()}}</h1>
+<h1>Total stock: {{totalStock()}}</h1>
+
+<ul>
+  <li *ngFor="let myItem of myItems">
+    <h2>Item name: {{myItem.name | uppercase}}</h2>  
+    <h2>ID: {{myItem.id}}</h2>  
+    <h2 *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</h2>  
+    <h2 *ngIf="myItem.stock === 0" class="outofstock">Out of stock</h2> 
+    <h2>Description: {{myItem.description}}</h2> 
+    <h2>Price: {{myItem.price | currency:'EUR':true: '1.2-2'}}</h2> 
+  </li>
+</ul>
+
+
