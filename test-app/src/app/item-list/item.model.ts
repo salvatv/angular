@@ -3,5 +3,8 @@ export class Item{
     name: string;
     description: string;
     stock: number;
+    img: string;
+    selected:boolean;
     price: number;
+    quantity: number;
 }

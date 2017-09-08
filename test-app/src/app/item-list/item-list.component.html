@@ -9,14 +9,20 @@
 <h1>Total stock: {{totalStock()}}</h1>
 
 <ul>
-  <li *ngFor="let myItem of myItems">
-    <h2>Item name: {{myItem.name | uppercase}}</h2>  
-    <h2>ID: {{myItem.id}}</h2>  
-    <h2 *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</h2>  
-    <h2 *ngIf="myItem.stock === 0" class="outofstock">Out of stock</h2> 
-    <h2>Description: {{myItem.description}}</h2> 
-    <h2>Price: {{myItem.price | currency:'EUR':true: '1.2-2'}}</h2> 
+  
+  <li *ngFor="let myItem of myItems" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
+    <img [src]="myItem.img" alt="{{myItem.name}}">
+    <h3>Item name: {{myItem.name | uppercase}}</h3>  
+    <p>ID: {{myItem.id}}</p>  
+    <p *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</p>  
+    <p *ngIf="myItem.stock === 0" class="outofstock">Out of stock</p> 
+    <p>Description: {{myItem.description}}</p> 
+    <p>Price: {{myItem.price | currency:'EUR':true: '1.2-2'}}</p> 
+    <button class="btn-amount" (click)=" downQuantity(myItem)" >-</button> 
+    <input type="number" #t (change)="add(myItem, t.value)" maxlength="2" placeholder="0" class="amount" [value]="myItem.quantity"/>
+    <button class="btn-amount" (click)=" addQuantity(myItem)" >+</button>
   </li>
+  
 </ul>
 
 
