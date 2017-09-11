@@ -52,14 +52,14 @@ export class ItemListComponent implements OnInit {
         console.log(item.name + ' ' +item.quantity);  
   }
  
-  add(item: Item, value:number) {
-    item.stock = this.myItems;
-          if (value > 0 && value <= item.stock){                      
-            item.stock -= value;
-            item.quantity = value;
-            console.log(item.quantity);   
-          }
-  }
+ // add(item: Item, value:number) {
+ //   item.stock = this.myItems;
+ //         if (value > 0 && value <= item.stock){                      
+ //           item.stock -= value;
+ //           item.quantity = value;
+ //           console.log(item.quantity);   
+  //        }
+ // }
 
   downQuantity(item: Item) {
     if(item.quantity > 0){
