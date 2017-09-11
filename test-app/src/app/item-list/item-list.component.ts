@@ -16,21 +16,14 @@ export class ItemListComponent implements OnInit {
 
   ngOnInit() {     
       this.itemLisService.getItemList().subscribe(myItems => this.myItems = myItems);  
-    }    
+    }   
 
-   // this.myItems = Items;
-   // let stockinicial=new Array();
-   // this.myItems.forEach(item => {
-    //stockinicial[item.id].push(item.stock);
-   // });
-  
   totalItems() {
     if(this.myItems){
       return this.myItems.length;
     }else{
       return 0;
-    }
-    
+    }    
   };
 
   totalStock() {
