@@ -22,7 +22,7 @@
     <p>Description: {{myItem.description}}</p> 
     <p>Price: {{myItem.price | currency:'EUR':true: '1.2-2'}}</p> 
     <button class="btn-amount" (click)=" downQuantity(myItem)" >-</button> 
-    <input type="number" #t (change)="add(myItem, t.value)" maxlength="2" placeholder="0" class="amount" [value]="myItem.quantity"/>
+    <input type="number" id="quantity" [(ngModel)]="myItem.quantity" #t (change)="add(myItem, t.value)" maxlength="2" placeholder="0" class="amount" [value]="myItem.quantity"/>
     <button class="btn-amount" (click)=" addQuantity(myItem)" >+</button>
   </li>
   
