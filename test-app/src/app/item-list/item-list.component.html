@@ -5,13 +5,16 @@
     <marquee scrollamount="135">I'm fastestest!!!</marquee>
 </p>
 
+<p><input type="text" [(ngModel)]="search" placeholder="buscar"></p>
+
 <h1>Total items: {{totalItems()}}</h1>
 <h1>Total stock: {{totalStock()}}</h1>
 
 <ul>
   
-  <li *ngFor="let myItem of myItems" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
+  <li *ngFor="let myItem of myItems | mySearch:'name':search" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
     <img [src]="myItem.img" alt="{{myItem.name}}">
+    <input type="text" name="lname" #t (change)="updateName(myItem, t.value)">Item name: {{myItem.name | uppercase}}
     <h3>Item name: {{myItem.name | uppercase}}</h3>  
     <p>ID: {{myItem.id}}</p>  
     <p *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</p>  

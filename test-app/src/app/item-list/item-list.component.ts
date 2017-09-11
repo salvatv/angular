@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from "./item.model";
-import { Items } from "./mocks";
+//import { Items } from "./mocks";
+import { ItemListService } from "./item-list.service";
 
 @Component({
   selector: 'app-item-list',
@@ -11,18 +12,25 @@ export class ItemListComponent implements OnInit {
 
   myItems: Item[];  
 
-  constructor() { }
+  constructor(private itemLisService: ItemListService) { }
 
-  ngOnInit() {
-    this.myItems = Items;
-    let stockinicial=new Array();
-    this.myItems.forEach(item => {
-    stockinicial[item.id].push(item.stock);
-    });
-  }  
+  ngOnInit() {     
+      this.itemLisService.getItemList().subscribe(myItems => this.myItems = myItems);  
+    }    
 
+   // this.myItems = Items;
+   // let stockinicial=new Array();
+   // this.myItems.forEach(item => {
+    //stockinicial[item.id].push(item.stock);
+   // });
+  
   totalItems() {
-    return this.myItems.length;
+    if(this.myItems){
+      return this.myItems.length;
+    }else{
+      return 0;
+    }
+    
   };
 
   totalStock() {
@@ -31,7 +39,7 @@ export class ItemListComponent implements OnInit {
  //    total = entry.stock + total;      
  // } 
   //return total;  
-  return this.myItems.reduce( (prev, current) => prev + current.stock, 0);
+  return this.myItems? this.myItems.reduce( (prev, current) => prev + current.stock, 0):0;
   };
 
   isSelected(id) {
@@ -45,29 +53,32 @@ export class ItemListComponent implements OnInit {
   }
 
   addQuantity(item: Item) {
-    if(item.stock != 0)  {
+    if(item.stock != 0 && item.quantity < item.stock)  {
       item.quantity++;
-      item.stock--;  
+     // item.stock--;  
     }             
         console.log(item.name + ' ' +item.quantity);  
   }
  
  // add(item: Item, value:number) {
- //   item.stock = this.myItems;
+//    item.stock = this.myItems;
  //         if (value > 0 && value <= item.stock){                      
- //           item.stock -= value;
+            //item.stock -= value;
  //           item.quantity = value;
  //           console.log(item.quantity);   
-  //        }
+ //         }
  // }
 
   downQuantity(item: Item) {
     if(item.quantity > 0){
     item.quantity--;
-    item.stock++; 
+   // item.stock++; 
     }   
     console.log(item.name + ' ' +item.quantity);  
 }
 
+updateName(item: Item, value:string){
+item.name=value;
+}
 
 }
