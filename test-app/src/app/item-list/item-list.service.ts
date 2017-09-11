@@ -6,6 +6,9 @@ import { Observable } from "rxjs/Rx";
 
 @Injectable()
 export class ItemListService {
+    static updateItem(arg0: any): any {
+        throw new Error("Method not implemented.");
+    }
 
     constructor(private http: Http){ }
 

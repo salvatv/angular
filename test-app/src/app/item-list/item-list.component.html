@@ -14,7 +14,7 @@
   
   <li *ngFor="let myItem of myItems | mySearch:'name':search" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
     <img [src]="myItem.img" alt="{{myItem.name}}">
-    <input type="text" name="lname" #t (change)="updateName(myItem, t.value)">Item name: {{myItem.name | uppercase}}
+    <p>Item name: <input type="text" [(ngModel)]="myItem.name" (change)="updateItem(myItem)"></p>
     <h3>Item name: {{myItem.name | uppercase}}</h3>  
     <p>ID: {{myItem.id}}</p>  
     <p *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</p>  

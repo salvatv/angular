@@ -77,8 +77,8 @@ export class ItemListComponent implements OnInit {
     console.log(item.name + ' ' +item.quantity);  
 }
 
-updateName(item: Item, value:string){
-item.name=value;
+updateItem(item: Item){
+this.itemLisService.updateItem(item).subscribe();
 }
 
 }
