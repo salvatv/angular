@@ -8,7 +8,7 @@
       "selected": true,
       "price": 23.56,
       "quantity": 0,
-      "name": "Manio",
+      "name": "Maniooionnç",
       "editable": false
     },
     {
@@ -17,7 +17,7 @@
       "description": "This item is a bullshit",
       "stock": 10,
       "img": "../assets/Peter.png",
-      "selected": false,
+      "selected": true,
       "price": 23.56,
       "quantity": 0,
       "editable": false
@@ -46,11 +46,11 @@
     },
     {
       "id": 5,
-      "name": "Otro mas",
+      "name": "moto",
       "description": "This item is a geniuooos",
       "stock": 2,
       "img": "../assets/Saborio.png",
-      "selected": false,
+      "selected": true,
       "price": 23.56,
       "quantity": 0,
       "editable": false

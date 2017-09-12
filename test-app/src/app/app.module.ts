@@ -11,20 +11,27 @@ import { HttpModule } from '@angular/http';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ItemComponent } from './item/item.component';
+import { OrderComponent } from './order/order.component';
+import { CartComponent } from './order/cart/cart.component';
 
 const appRoutes: Routes = [
+  { path: 'heroes', component: ItemListComponent }, 
   { path: 'crisis-center', component: PageNotFoundComponentComponent },
-  { path: 'heroes',      component: ItemListComponent }  
+  { path: 'order', component: OrderComponent }
   
-];
 
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
     MySearchPipe,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    ItemComponent,
+    OrderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

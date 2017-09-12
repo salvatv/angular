@@ -1,8 +1,8 @@
 <p align="center">
-    <marquee scrollamount="15">I'm fast!</marquee><br>
-    <marquee scrollamount="16">I'm faster!</marquee><br>
-    <marquee scrollamount="18">I'm fastest!</marquee><br>
-    <marquee scrollamount="135">I'm fastestest!!!</marquee>
+  <marquee scrollamount="15">I'm fast!</marquee><br>
+  <marquee scrollamount="16">I'm faster!</marquee><br>
+  <marquee scrollamount="18">I'm fastest!</marquee><br>
+  <marquee scrollamount="135">I'm fastestest!!!</marquee>
 </p>
 
 <p><input type="text" [(ngModel)]="search" placeholder="buscar"></p>
@@ -11,26 +11,7 @@
 <h1>Total stock: {{totalStock()}}</h1>
 
 <ul>
-  
-  <li *ngFor="let myItem of myItems | mySearch:'name':search" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
-    <img [src]="myItem.img" alt="{{myItem.name}}">  
-  <!--  <h3>Item name: {{myItem.name | uppercase}}</h3>  -->
-  
-    <p *ngIf="!myItem.editable" (click)="isEditable(myItem)">Item name: {{myItem.name}}</p>
-    <form action="" *ngIf="myItem.editable">
-      <p><input type="text" [(ngModel)]="myItem.name" [ngModelOptions]="{standalone: true}" (change)="isEditable(myItem)"></p>
-      <button (click)="isEditable(myItem)">Guardar</button>
-    </form>
-    <p>ID: {{myItem.id}}</p>  
-    <p *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</p>  
-    <p *ngIf="myItem.stock === 0" class="outofstock">Out of stock</p> 
-    <p>Description: {{myItem.description}}</p> 
-    <p>Price: {{myItem.price | currency:'EUR':true: '1.2-2'}}</p> 
-    <button class="btn-amount" (click)=" downQuantity(myItem)" >-</button> 
-    <input type="number" id="quantity" [(ngModel)]="myItem.quantity" #t (change)="add(myItem, t.value)" maxlength="2" placeholder="0" class="amount" [value]="myItem.quantity"/>
-    <button class="btn-amount" (click)=" addQuantity(myItem)" >+</button>
-  </li>
-  
-</ul>
 
-<router-outlet></router-outlet>
+  <app-item *ngFor="let myItem of myItems | mySearch:'name':search" [myItem]="myItem" (cart)="addToCart($event)"></app-item>
+
+</ul>
