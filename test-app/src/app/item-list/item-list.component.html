@@ -14,10 +14,11 @@
   
   <li *ngFor="let myItem of myItems | mySearch:'name':search" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
     <img [src]="myItem.img" alt="{{myItem.name}}">  
-    <h3>Item name: {{myItem.name | uppercase}}</h3>
-    <p *ngIf="!myItem.editable" (click)="isEditable(myItem)">{{myItem.name}}</p>
+  <!--  <h3>Item name: {{myItem.name | uppercase}}</h3>  -->
+  
+    <p *ngIf="!myItem.editable" (click)="isEditable(myItem)">Item name: {{myItem.name}}</p>
     <form action="" *ngIf="myItem.editable">
-      <p><input type="text" [(ngModel)]="myItem.name" [ngModelOptions]="{standalone: true}" (blur)="isEditable(myItem)"></p>
+      <p><input type="text" [(ngModel)]="myItem.name" [ngModelOptions]="{standalone: true}" (change)="isEditable(myItem)"></p>
       <button (click)="isEditable(myItem)">Guardar</button>
     </form>
     <p>ID: {{myItem.id}}</p>  
@@ -31,11 +32,5 @@
   </li>
   
 </ul>
-
-<h1>Angular Router</h1>
-<nav>
-  <a routerLink="/crisis-center" routerLinkActive="active">Other page</a> 
-</nav>
-
 
 <router-outlet></router-outlet>

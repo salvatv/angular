@@ -17,7 +17,7 @@
       "description": "This item is a bullshit",
       "stock": 10,
       "img": "../assets/Peter.png",
-      "selected": true,
+      "selected": false,
       "price": 23.56,
       "quantity": 0,
       "editable": false
