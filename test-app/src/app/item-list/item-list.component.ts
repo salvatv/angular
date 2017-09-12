@@ -75,4 +75,13 @@ updateItem(item: Item){
 this.itemLisService.updateItem(item).subscribe();
 }
 
+isEditable(item: Item){
+  if(item.editable){
+    item.editable = false;
+    this.updateItem(item);    
+  }else{
+    item.editable = true;
+  }
+}
+
 }

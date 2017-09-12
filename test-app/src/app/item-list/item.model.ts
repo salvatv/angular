@@ -7,4 +7,5 @@ export class Item{
     selected:boolean;
     price: number;
     quantity: number;
+    editable: boolean;
 }

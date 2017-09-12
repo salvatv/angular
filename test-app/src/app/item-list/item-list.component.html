@@ -13,9 +13,13 @@
 <ul>
   
   <li *ngFor="let myItem of myItems | mySearch:'name':search" [class.selected]="myItem.selected" (click)="isSelected(myItem.id)">   
-    <img [src]="myItem.img" alt="{{myItem.name}}">
-    <p>Item name: <input type="text" [(ngModel)]="myItem.name" (change)="updateItem(myItem)"></p>
-    <h3>Item name: {{myItem.name | uppercase}}</h3>  
+    <img [src]="myItem.img" alt="{{myItem.name}}">  
+    <h3>Item name: {{myItem.name | uppercase}}</h3>
+    <p *ngIf="!myItem.editable" (click)="isEditable(myItem)">{{myItem.name}}</p>
+    <form action="" *ngIf="myItem.editable">
+      <p><input type="text" [(ngModel)]="myItem.name" [ngModelOptions]="{standalone: true}" (blur)="isEditable(myItem)"></p>
+      <button (click)="isEditable(myItem)">Guardar</button>
+    </form>
     <p>ID: {{myItem.id}}</p>  
     <p *ngIf="myItem.stock > 0">Stock: {{myItem.stock}}</p>  
     <p *ngIf="myItem.stock === 0" class="outofstock">Out of stock</p> 
@@ -28,4 +32,11 @@
   
 </ul>
 
+<h1>Angular Router</h1>
+<nav>
+  <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+</nav>
 
+
+<router-outlet></router-outlet>

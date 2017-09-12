@@ -8,17 +8,19 @@
       "selected": true,
       "price": 23.56,
       "quantity": 0,
-      "name": "121"
+      "name": "Manio",
+      "editable": false
     },
     {
       "id": 2,
-      "name": "Peter",
+      "name": "Peter languila",
       "description": "This item is a bullshit",
       "stock": 10,
       "img": "../assets/Peter.png",
-      "selected": false,
+      "selected": true,
       "price": 23.56,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "img": "../assets/Pako.png",
       "selected": false,
       "price": 23.56,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "img": "../assets/Otro.png",
       "selected": false,
       "price": 23.56,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "img": "../assets/Saborio.png",
       "selected": false,
       "price": 23.56,
-      "quantity": 0
+      "quantity": 0,
+      "editable": false
     }
   ]
 }

@@ -8,7 +8,8 @@ export const Items: Item[] = [{
     'img': '../assets/Juanky.png',
     'selected':false,
     'price': 23.56,
-    'quantity': 0
+    'quantity': 0,
+    'editable': false
   },
   {'id': 2,
   'name': 'Peter',
@@ -17,7 +18,8 @@ export const Items: Item[] = [{
   'img': '../assets/Peter.png',
   'selected':true,
   'price': 23.56,
-  'quantity': 0
+  'quantity': 0,
+  'editable': false
   },
   {'id': 3,
   'name': 'Pako',
@@ -26,7 +28,8 @@ export const Items: Item[] = [{
   'img': '../assets/Pako.png',
   'selected':false,
   'price': 23.56,
-  'quantity': 0
+  'quantity': 0,
+  'editable': false
   },
   {'id': 4,
   'name': 'Otro',
@@ -35,7 +38,8 @@ export const Items: Item[] = [{
   'img': '../assets/Otro.png',
   'selected':false,
   'price': 23.56,
-  'quantity': 0
+  'quantity': 0,
+  'editable': false
   },
   {'id': 5,
   'name': 'Otro mas',
@@ -44,5 +48,6 @@ export const Items: Item[] = [{
   'img': '../assets/Saborio.png',
   'selected':false,
   'price': 23.56,
-  'quantity': 0
+  'quantity': 0,
+  'editable': false
   }];
