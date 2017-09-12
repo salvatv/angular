@@ -12,7 +12,7 @@ import { ItemListService } from "../item-list/item-list.service";
 export class ItemComponent implements OnInit {
 
   @Input() myItem: Item;
-  @Output() cart: EventEmitter<Item> = new EventEmitter<Item>();
+  @Output() cart = new EventEmitter<Item>();
 
   constructor(private itemLisService: ItemListService) { }
 

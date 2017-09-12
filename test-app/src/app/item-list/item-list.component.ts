@@ -43,6 +43,8 @@ export class ItemListComponent implements OnInit {
 
   addToCart(item: Item) {
     this.cart.items.push(item);
+    console.log(item);
+    console.log(this.cart);
   }
 
 }
