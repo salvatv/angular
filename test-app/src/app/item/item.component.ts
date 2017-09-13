@@ -20,13 +20,11 @@ export class ItemComponent implements OnInit {
   }
 
   isSelected(id) {
-
     if (this.myItem.id === id) {
       this.myItem.selected = true;
     } else {
       this.myItem.selected = false;
     }
-
   }
 
   addQuantity(item: Item) {
@@ -56,7 +54,7 @@ export class ItemComponent implements OnInit {
   }
 
   updateItem(item: Item) {
-    this.itemLisService.updateItem(item).subscribe();
+    this.itemLisService.updateItem(item).subscribe();   
   }
 
   isEditable(item: Item) {
