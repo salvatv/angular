@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ItemComponent } from './item/item.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './order/cart/cart.component';
+import { CartService } from "./order/cart/cart.service";
 
 const appRoutes: Routes = [
   { path: 'heroes', component: ItemListComponent }, 
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [ItemListService],
+  providers: [ItemListService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

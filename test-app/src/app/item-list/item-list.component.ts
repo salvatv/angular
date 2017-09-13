@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from "./item.model";
-//import { Items } from "./mocks";
 import { ItemListService } from "./item-list.service";
 import { CartComponent } from "../order/cart/cart.component";
 import { Cart } from "../order/cart/cart.model";
+import { CartService } from "../order/cart/cart.service";
 
 @Component({
   selector: 'app-item-list',
@@ -13,15 +13,12 @@ import { Cart } from "../order/cart/cart.model";
 export class ItemListComponent implements OnInit {
 
   myItems: Item[];
-  cart: Cart;
 
-  constructor(private itemLisService: ItemListService) { }
+  constructor(private itemLisService: ItemListService, private cartService: CartService) { }
 
   ngOnInit() {
     this.itemLisService.getItemList().subscribe(myItems => this.myItems = myItems);
-    this.cart = new Cart();
-    this.cart.items = new Array();
-
+    console.log(this.cartService);
   }
 
   totalItems() {
@@ -33,18 +30,24 @@ export class ItemListComponent implements OnInit {
   };
 
   totalStock() {
-    //  let total = 0;
-    //  for (let entry of this.myItems) {      
-    //    total = entry.stock + total;      
-    // } 
-    //return total;  
     return this.myItems ? this.myItems.reduce((prev, current) => prev + current.stock, 0) : 0;
   };
 
   addToCart(item: Item) {
-    this.cart.items.push(item);
-    console.log(item);
-    console.log(this.cart);
+    if (this.cartService.cart.items.length != 0) {
+      if (item.quantity != 0) {
+        this.cartService.cart.items.forEach(element => {
+          if (element.id === item.id) {
+            console.log(element.quantity);
+            console.log(item.quantity);
+            element.quantity += item.quantity;
+          }
+        });
+      }
+    } else {
+      this.cartService.addItem(item);
+    }
   }
-
 }
+
+

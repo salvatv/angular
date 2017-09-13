@@ -11,7 +11,5 @@
 <h1>Total stock: {{totalStock()}}</h1>
 
 <ul>
-
   <app-item *ngFor="let myItem of myItems | mySearch:'name':search" [myItem]="myItem" (cart)="addToCart($event)"></app-item>
-
-</ul>
+ </ul>
