@@ -1,0 +1,37 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+header{
+    margin-bottom: 30px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+   text-align: center;
+}
+
+.persona{
+    width: 50%;
+    height: 150px;    
+    margin:0 auto;   
+    border:1px solid black;
+}
+
+.img{  
+    float: left;
+}
+
+div img{
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 10px;
+
+}
+
+.nombrePer{
+    float: right;
+    margin-right: 400px;
+    margin-top: 20px;
+}
