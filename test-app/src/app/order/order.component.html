@@ -1,5 +1,8 @@
 <app-cart></app-cart>
+<app-formulario  (formu)="test($event)"></app-formulario>
 
-<p>Total:  </p>
+<p>Total:  {{totalPrecioCarro()}}</p>
+<p>Nombre: {{name}}</p>
+<p>Apellido: {{surname}}</p>
 
 <a routerLink="/heroes" routerLinkActive="active">Volver</a>

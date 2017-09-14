@@ -1,10 +1,8 @@
-<div>   
-
-    piosdafusdfasdufhn
+<div>      
     <li *ngFor="let myItem of myItems" >        
         <p>Name: {{myItem.name}}</p> 
         <p>ID: {{myItem.id}}</p> 
-        <p>Quantity: {{myItem.quantity}}</p>          
-    </li>
-    
+        <p>Quantity: {{myItem.quantity}}</p>     
+        <p><button (click)="deleteItem(myItem)">X</button></p>    
+    </li>    
 </div>

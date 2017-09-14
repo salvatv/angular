@@ -9,8 +9,9 @@ import { ItemListService } from "../item-list/item-list.service";
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnInit { 
 
+  @Input() myItems: Item[];
   @Input() myItem: Item;
   @Output() cart = new EventEmitter<Item>();
 
@@ -20,25 +21,26 @@ export class ItemComponent implements OnInit {
   }
 
   isSelected(id) {
-    if (this.myItem.id === id) {
-      this.myItem.selected = true;
-    } else {
-      this.myItem.selected = false;
-    }
+    this.myItems.forEach(element => { 
+      if (element.id === id) {
+        element.selected = true;
+      } else {
+        element.selected = false;
+      }     
+    });
+   
   }
 
   addQuantity(item: Item) {
     if (item.stock != 0 && item.quantity < item.stock) {
       item.quantity++;
       // item.stock--;  
-    }
-    console.log(item.name + ' ' + item.quantity);
+    }  
   }
 
   add(item: Item, value: number) {
     if (value > 0 && value <= item.stock) {
-      item.quantity = value;
-      console.log(item.quantity);
+      item.quantity = value;     
     } else {
       (<HTMLInputElement>document.getElementById("quantity")).value = "0";
       return alert("Inserta un valor correcto TONTO");
@@ -49,8 +51,7 @@ export class ItemComponent implements OnInit {
     if (item.quantity > 0) {
       item.quantity--;
       // item.stock++; 
-    }
-    console.log(item.name + ' ' + item.quantity);
+    }    
   }
 
   updateItem(item: Item) {
@@ -66,9 +67,10 @@ export class ItemComponent implements OnInit {
     }
   }
 
-  addToCart() {
+  addToCart() {    
+    this.myItem.stock -= this.myItem.quantity;
+    (<HTMLInputElement>document.getElementById("quantity")).value = "0";   
     this.cart.emit(this.myItem);
-    console.log(this.cart);
   }
 
 }

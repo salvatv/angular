@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
@@ -15,6 +15,7 @@ import { ItemComponent } from './item/item.component';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './order/cart/cart.component';
 import { CartService } from "./order/cart/cart.service";
+import { FormularioComponent } from './order/formulario/formulario.component';
 
 const appRoutes: Routes = [
   { path: 'heroes', component: ItemListComponent }, 
@@ -32,11 +33,13 @@ const appRoutes: Routes = [
     PageNotFoundComponentComponent,
     ItemComponent,
     OrderComponent,
-    CartComponent
+    CartComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(
       appRoutes,

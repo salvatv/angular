@@ -9,7 +9,8 @@
 
 <h1>Total items: {{totalItems()}}</h1>
 <h1>Total stock: {{totalStock()}}</h1>
+<h1>Items en el carro: {{totalCarro()}}</h1>
 
 <ul>
-  <app-item *ngFor="let myItem of myItems | mySearch:'name':search" [myItem]="myItem" (cart)="addToCart($event)"></app-item>
+  <app-item *ngFor="let myItem of myItems | mySearch:'name':search" [myItem]="myItem" [myItems]="myItems" (cart)="addToCart($event)"></app-item>
  </ul>

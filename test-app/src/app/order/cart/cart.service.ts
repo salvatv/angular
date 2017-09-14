@@ -20,7 +20,11 @@ export class CartService {
       this.cart.items.push(item);
     }
 
-    removeItem(){        
+    removeItem(item:Item){     
+      var index = this.cart.items.indexOf(item, 0);
+      if (index > -1) {
+         this.cart.items.splice(index, 1);
+      }
     }
 
 }

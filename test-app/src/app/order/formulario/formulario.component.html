@@ -1,0 +1,16 @@
+<section>
+  <h1>Formulario:</h1>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <p>
+      <label>First name:</label>
+      <input type="text" formControlName="firstname">
+    </p>
+    <p>
+      <label>Surnamr:</label>
+      <input type="text" formControlName="surname">
+    </p>
+    <p>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>
+</section>

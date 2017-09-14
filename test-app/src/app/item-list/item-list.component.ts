@@ -28,23 +28,30 @@ export class ItemListComponent implements OnInit {
     }
   };
 
+  totalCarro(){
+    return this.cartService.cart.items.length;
+  }
+
   totalStock() {
     return this.myItems ? this.myItems.reduce((prev, current) => prev + current.stock, 0) : 0;
   };
 
   addToCart(item: Item) {
-    if (this.cartService.cart.items.length != 0) {
-      if (item.quantity != 0) {
-        this.cartService.cart.items.forEach(element => {
-          if (element.id === item.id) {
-            console.log(element.quantity);
-            console.log(item.quantity);
-            element.quantity += item.quantity;
-          }
-        });
-      }
-    } else {
-      this.cartService.addItem(item);
+    // if (this.cartService.cart.items.length != 0) {
+    //   if (item.quantity != 0) {
+    //     this.cartService.cart.items.forEach(element => {
+    //       if (element.id === item.id) {
+    //         console.log(element.quantity);
+    //         console.log(item.quantity);
+    //         element.quantity += item.quantity;
+    //       }
+    //     });
+    //   }
+    // } else {
+    //   this.cartService.addItem(item);
+    // }
+    if (item.quantity != 0 && item.quantity < item.stock) {
+    this.cartService.addItem(item);
     }
   }
 }
