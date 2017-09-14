@@ -5,7 +5,7 @@
       "description": "This item is a shit",
       "stock": 5,
       "img": "../assets/Juanky.png",
-      "selected": true,
+      "selected": false,
       "price": 23.56,
       "quantity": 0,
       "name": "pepepe",
