@@ -1,10 +1,10 @@
-export class Item{
+export class Item {
     id: number;
     name: string;
     description: string;
     stock: number;
     img: string;
-    selected:boolean;
+    selected: boolean;
     price: number;
     quantity: number;
     editable: boolean;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Historieta } from '../historieta/historieta-model';
+import { HistorietasService } from './historietas-service';
 
 @Component({
   selector: 'app-mis-historietas',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisHistorietasComponent implements OnInit {
 
-  constructor() { }
+  historietas: Historieta[];
+
+  constructor(private historietaService: HistorietasService) { }
 
   ngOnInit() {
-  }
+    this.historietaService.getHistorietas().subscribe(historietas => this.historietas = historietas);
+   }
 
 }

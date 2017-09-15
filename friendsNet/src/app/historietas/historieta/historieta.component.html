@@ -1,3 +1,11 @@
 <p>
-  historieta works!
+  Di algo
 </p>
+<form [formGroup]="form" (submit)="submitHistorieta()">
+  <p>
+    <input type="text" formControlName="historieta">
+  </p>
+  <p>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </p>
+</form>

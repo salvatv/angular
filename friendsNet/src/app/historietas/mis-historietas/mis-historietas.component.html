@@ -1,3 +1,9 @@
 <p>
-  mis-historietas works!
+  Mis historietas  
 </p>
+
+<div *ngFor="let historieta of historietas">
+  <p>ID: {{historieta.id}}</p>
+  <p>Mierdas: {{historieta.text}}</p>
+  <p>Nombre: {{historieta.person.first_name}}</p>
+</div>
