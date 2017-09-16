@@ -187,7 +187,7 @@
     {
       "post": {
         "id": 0,
-        "person": [
+        "person": 
           {
             "id": 0,
             "first_name": "Lorena",
@@ -197,11 +197,11 @@
             "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/justme_timothyg/128.jpg",
             "birth": "2017-07-15T16:06:50.357Z"
           }
-        ],
+        ,
         "text": "Labore praesentium tempora. Quas sed quia aperiam in. Quasi qui quod dolore laboriosam odit quisquam voluptate qui.",
         "publish": "2017-07-09T15:21:21.831Z"
       },
-      "person": [
+      "person": 
         {
           "id": 0,
           "first_name": "Lorena",
@@ -211,13 +211,13 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/justme_timothyg/128.jpg",
           "birth": "2017-07-15T16:06:50.357Z"
         }
-      ],
+      ,
       "opinion": 3
     },
     {
       "post": {
         "id": 0,
-        "person": [
+        "person": 
           {
             "id": 1,
             "first_name": "Cristian",
@@ -227,11 +227,11 @@
             "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
             "birth": "2016-11-22T12:45:10.827Z"
           }
-        ],
+        ,
         "text": "Labore praesentium tempora. Quas sed quia aperiam in. Quasi qui quod dolore laboriosam odit quisquam voluptate qui.",
         "publish": "2017-07-09T15:21:21.831Z"
       },
-      "person": [
+      "person": 
         {
           "id": 1,
           "first_name": "Cristian",
@@ -241,13 +241,13 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
           "birth": "2016-11-22T12:45:10.827Z"
         }
-      ],
+      ,
       "opinion": 2
     },
     {
       "post": {
         "id": 0,
-        "person": [
+        "person": 
           {
             "id": 1,
             "first_name": "Cristian",
@@ -257,11 +257,11 @@
             "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
             "birth": "2016-11-22T12:45:10.827Z"
           }
-        ],
+        ,
         "text": "Labore praesentium tempora. Quas sed quia aperiam in. Quasi qui quod dolore laboriosam odit quisquam voluptate qui.",
         "publish": "2017-07-09T15:21:21.831Z"
       },
-      "person": [
+      "person": 
         {
           "id": 1,
           "first_name": "Cristian",
@@ -271,13 +271,13 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
           "birth": "2016-11-22T12:45:10.827Z"
         }
-      ],
+      ,
       "opinion": 3
     }
   ],
   "relations": [
     {
-      "requester": [
+      "requester": 
         {
           "id": 0,
           "first_name": "Lorena",
@@ -287,8 +287,8 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/justme_timothyg/128.jpg",
           "birth": "2017-07-15T16:06:50.357Z"
         }
-      ],
-      "requested": [
+      ,
+      "requested": 
         {
           "id": 1,
           "first_name": "Cristian",
@@ -298,11 +298,11 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
           "birth": "2016-11-22T12:45:10.827Z"
         }
-      ],
+      ,
       "accepted": false
     },
     {
-      "requester": [
+      "requester": 
         {
           "id": 0,
           "first_name": "Lorena",
@@ -312,18 +312,18 @@
           "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/justme_timothyg/128.jpg",
           "birth": "2017-07-15T16:06:50.357Z"
         }
-      ],
-      "requested": [
+      ,
+      "requested": 
         {
-          "id": 1,
-          "first_name": "Cristian",
-          "last_name": "Longoria",
-          "city": "Linares Alfonso",
-          "country": "Aruba",
-          "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
-          "birth": "2016-11-22T12:45:10.827Z"
+         "id": 2,
+      "first_name": "Yolanda",
+      "last_name": "Dávila",
+      "city": "Puertollano Rebecatown",
+      "country": "Cabo Verde",
+      "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/mbilalsiddique1/128.jpg",
+      "birth": "2016-11-30T14:22:03.051Z"
         }
-      ],
+      ,
       "accepted": true
     }
   ]

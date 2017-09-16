@@ -24,6 +24,13 @@ export class HistorietasService {
             .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
     }
 
+    getFriends(): Observable<Person[]> {
+        return this.http.get('http://localhost:3000/relations?requester.id=0')
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
+    }
+
+
     addHistorieta(historieta: Historieta): Observable<Historieta> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });

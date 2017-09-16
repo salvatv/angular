@@ -14,6 +14,7 @@ export class DatosComponent implements OnInit {
   constructor(private historietaService: HistorietasService) { }
 
   ngOnInit() {
+    this.person = new Person();
     this.historietaService.getPerson().subscribe(person => this.person = person);
   }
 

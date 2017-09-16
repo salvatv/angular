@@ -1,3 +1,18 @@
 <p>
-  coleguillas works!
+  Mis coleguillas
 </p>
+
+<div *ngFor="let coleguilla of coleguillas">
+  <div *ngIf="coleguilla.accepted">
+    <img src="{{coleguilla.requested.picture}}" alt="Smiley face" height="42" width="42">
+    <p>ID: {{coleguilla.requested.id}}</p>
+    <p>Nombre: {{coleguilla.requested.first_name}}</p>
+    <button class="btn-amount" (click)="addQuantity(myItem)">X</button><br>
+  </div>
+  <div *ngIf="!coleguilla.accepted">
+    <img src="{{coleguilla.requested.picture}}" alt="Smiley face" height="42" width="42">
+    <p>ID: {{coleguilla.requested.id}}</p>
+    <p>Nombre: {{coleguilla.requested.first_name}}</p>
+    <p>Solicitud enviada</p>
+  </div>
+</div>

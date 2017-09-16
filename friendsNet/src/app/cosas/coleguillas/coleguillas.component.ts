@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../../historietas/historieta/person-model';
+import { HistorietasService } from '../../historietas/mis-historietas/historietas-service';
 
 @Component({
   selector: 'app-coleguillas',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColeguillasComponent implements OnInit {
 
-  constructor() { }
+  coleguillas: Person[];
+
+  constructor(private historietaService: HistorietasService) { }
 
   ngOnInit() {
+    this.historietaService.getFriends().subscribe(coleguillas => this.coleguillas = coleguillas);
   }
 
 }
