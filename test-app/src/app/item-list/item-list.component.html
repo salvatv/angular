@@ -13,4 +13,4 @@
 
 <ul>
   <app-item *ngFor="let myItem of myItems | mySearch:'name':search" [myItem]="myItem" [myItems]="myItems" (cart)="addToCart($event)"></app-item>
- </ul>
+</ul>

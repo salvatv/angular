@@ -1,0 +1,31 @@
+.container-post{
+    width: 100%;
+    height: 15em;
+    margin-top: 50px;
+}
+
+.subcontainer-post{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.subcontainer-post textarea{
+    width: 35em;
+    height: 7em;
+    resize: none;
+}
+
+fieldset{
+    border: 1px solid black;
+}
+
+legend{
+    width: auto;
+    margin: 10px;
+}
+
+button{
+    float: right;
+    margin-right: -150px; 
+    margin-bottom: 10px;
+}

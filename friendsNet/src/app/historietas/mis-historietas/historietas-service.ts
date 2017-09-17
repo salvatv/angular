@@ -3,6 +3,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Historieta } from '../historieta/historieta-model';
 import { Person } from '../historieta/person-model';
+import { Relation } from './relation-model';
 
 @Injectable()
 export class HistorietasService {
@@ -39,6 +40,18 @@ export class HistorietasService {
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 
+    }
+
+    getRelation(coleguillaId: number, myId: number): Observable<Relation> {
+        return this.http.get(`http://localhost:3000/relations?requester.id=${myId}&requested.id=${coleguillaId}`)
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
+    }
+
+    deleteRelation(id: number) {
+        return this.http.delete(`http://localhost:3000/relations/${id}`)
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
     }
 
     // updateHistorieta(historieta: Historieta): Observable<Historieta[]> {

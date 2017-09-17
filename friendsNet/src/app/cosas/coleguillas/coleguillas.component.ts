@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../../historietas/historieta/person-model';
 import { HistorietasService } from '../../historietas/mis-historietas/historietas-service';
+import { Relation } from '../../historietas/mis-historietas/relation-model';
 
 @Component({
   selector: 'app-coleguillas',
@@ -15,6 +16,10 @@ export class ColeguillasComponent implements OnInit {
 
   ngOnInit() {
     this.historietaService.getFriends().subscribe(coleguillas => this.coleguillas = coleguillas);
+  }
+
+  unfollow(coleguilla) {
+    this.historietaService.deleteRelation(coleguilla.id);
   }
 
 }

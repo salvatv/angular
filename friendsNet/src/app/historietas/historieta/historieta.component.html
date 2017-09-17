@@ -1,11 +1,13 @@
-<p>
-  Di algo
-</p>
-<form [formGroup]="form" (submit)="submitHistorieta()">
-  <p>
-    <input type="text" formControlName="historieta">
-  </p>
-  <p>
-    <button type="submit" [disabled]="!form.valid">Submit</button>
-  </p>
-</form>
+<div class="container-post">
+  <div class="subcontainer-post">
+    <fieldset>
+        <legend>Di algo</legend>
+        <form [formGroup]="form" (submit)="submitHistorieta()" class="col-md-8">
+          <textarea name="" id="" formControlName="historieta"></textarea>
+          <p>
+            <button type="submit" [disabled]="!form.valid" class="btn btn-success">Publicar</button>
+          </p>
+        </form>
+    </fieldset>    
+  </div>
+</div>
