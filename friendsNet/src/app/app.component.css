@@ -20,12 +20,12 @@ footer{
 }
 
 .img{  
-    float: left;
+    float: left;    
 }
 
 div img{
     width: 50%;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 10px;
 
 }

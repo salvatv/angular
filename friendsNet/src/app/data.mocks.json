@@ -264,7 +264,7 @@
     }
   ],
   "relations": [
-    { 
+    {
       "id": 1,
       "requester": {
         "id": 0,
@@ -299,12 +299,12 @@
       },
       "requested": {
         "id": 2,
-        "first_name": "Yolanda",
-        "last_name": "Dávila",
-        "city": "Puertollano Rebecatown",
-        "country": "Cabo Verde",
-        "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/mbilalsiddique1/128.jpg",
-        "birth": "2016-11-30T14:22:03.051Z"
+        "first_name": "Cristian",
+        "last_name": "Longoria",
+        "city": "Linares Alfonso",
+        "country": "Aruba",
+        "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/ajaxy_ru/128.jpg",
+        "birth": "2016-11-22T12:45:10.827Z"
       },
       "accepted": true
     }

@@ -19,7 +19,7 @@ export class ColeguillasComponent implements OnInit {
   }
 
   unfollow(coleguilla) {
-    this.historietaService.deleteRelation(coleguilla.id);
+    this.historietaService.deleteRelation(coleguilla.id).subscribe(coleguillas => this.coleguillas = coleguillas);
   }
 
 }

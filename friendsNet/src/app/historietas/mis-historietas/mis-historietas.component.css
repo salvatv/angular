@@ -1,0 +1,29 @@
+.container-post{
+    width: 50%;
+    height: 15em;
+    margin: 0 auto;
+}
+
+.subcontainer{
+    width: 100%;
+    border: solid 1px black;
+    padding: 1em;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.historietas{
+    width: 100%;
+    border: solid 1px black;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.image-text{
+    margin-top: -10px;
+}
+img {
+    float: left;
+    margin: 10px;
+}

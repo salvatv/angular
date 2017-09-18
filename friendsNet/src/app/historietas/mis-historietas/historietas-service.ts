@@ -49,9 +49,13 @@ export class HistorietasService {
     }
 
     deleteRelation(id: number) {
+        console.log('oi');
+        console.log(id);
+        console.log(`http://localhost:3000/relations/${id}`);
         return this.http.delete(`http://localhost:3000/relations/${id}`)
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
+
     }
 
     // updateHistorieta(historieta: Historieta): Observable<Historieta[]> {

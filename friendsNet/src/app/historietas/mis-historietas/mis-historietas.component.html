@@ -1,9 +1,14 @@
-<p>
+<div class="container-post">
   Mis historietas
-</p>
-<div *ngFor="let historieta of historietas">
-  <img src="{{historieta.person.picture}}" alt="Smiley face" height="42" width="42">
-  <p>ID: {{historieta.id}}</p>
-  <p>Mierdas: {{historieta.text}}</p>
-  <p>Nombre: {{historieta.person.first_name}}</p>
+  <div class="subcontainer">
+    <div *ngFor="let historieta of historietas" class="historietas">
+      <p>{{historieta.person.first_name}} {{historieta.person.last_name}}</p>
+      <div class="image-text">
+        <img src="{{historieta.person.picture}}" alt="Smiley face" height="50" width="50">
+
+        <p>{{historieta.text}}</p>
+      </div>
+
+    </div>
+  </div>
 </div>
