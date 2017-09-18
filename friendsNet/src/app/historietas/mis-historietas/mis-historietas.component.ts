@@ -14,7 +14,9 @@ export class MisHistorietasComponent implements OnInit {
   constructor(private historietaService: HistorietasService) { }
 
   ngOnInit() {
-    this.historietaService.getHistorietas().subscribe(historietas => this.historietas = historietas);
-   }
+    this.historietaService.behavior$.subscribe(changed => {
+      this.historietaService.getHistorietas().subscribe(historietas => this.historietas = historietas);
+    });
+  }
 
 }

@@ -1,0 +1,19 @@
+.input-friends{     
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;  
+}
+
+.input-friends input{
+    width: 95%;
+}
+
+.busqueda{
+    width: 40%;
+    border: 1px solid black;    
+    padding: 10px;
+    float: right;
+    height: 390px;
+    overflow-y: scroll;
+}

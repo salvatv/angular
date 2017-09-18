@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../../historietas/historieta/person-model';
+import { HistorietasService } from '../../historietas/mis-historietas/historietas-service';
 
 @Component({
   selector: 'app-buscador',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscadorComponent implements OnInit {
 
-  constructor() { }
+  persons: Person[];
+  friends: Person[];
+
+  constructor(private personService: HistorietasService ) { }
 
   ngOnInit() {
+    this.personService.getPersons()
+      .subscribe(persons => this.persons = persons);
+      this.personService.getFriends()
+      .subscribe(friends => this.friends = friends);
   }
 
 }

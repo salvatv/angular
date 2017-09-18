@@ -4,12 +4,14 @@ import { Observable } from 'rxjs/Rx';
 import { Historieta } from '../historieta/historieta-model';
 import { Person } from '../historieta/person-model';
 import { Relation } from './relation-model';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class HistorietasService {
-    static updateHistorieta(arg0: any): any {
-        throw new Error('Method not implemented.');
-    }
+
+    private _behaviour: Subject<boolean> = new BehaviorSubject<boolean>(true);
+    behavior$ = this._behaviour.asObservable();
 
     constructor(private http: Http) { }
 
@@ -21,6 +23,12 @@ export class HistorietasService {
 
     getPerson(): Observable<Person> {
         return this.http.get('http://localhost:3000/persons/1')
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
+    }
+
+    getPersons(): Observable<Person[]> {
+        return this.http.get('http://localhost:3000/persons')
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
     }
@@ -38,7 +46,8 @@ export class HistorietasService {
 
         return this.http.post(`http://localhost:3000/posts`, historieta, options)
             .map((res: Response) => res.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'))
+            .finally(() => this._behaviour.next(true));
 
     }
 
@@ -57,15 +66,6 @@ export class HistorietasService {
             .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
 
     }
-
-    // updateHistorieta(historieta: Historieta): Observable<Historieta[]> {
-    //     let headers = new Headers({ 'Content-Type': 'application/json' });
-    //     let options = new RequestOptions({ headers: headers });
-
-    //     return this.http.put(`http://localhost:3000/posts/${item['id']}`, item, options)
-    //         .map((res: Response) => res.json())
-    //         .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
-    // }
 
 }
 
