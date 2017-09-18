@@ -1,4 +1,4 @@
-import { Person } from "../historieta/person-model";
+import { Person } from '../historieta/person-model';
 
 export class Relation {
     id: number;
