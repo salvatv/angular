@@ -14,6 +14,7 @@ import { DatosComponent } from './cosas/datos/datos.component';
 import { ColeguillasComponent } from './cosas/coleguillas/coleguillas.component';
 import { BuscadorComponent } from './colegas/buscador/buscador.component';
 import { HistorietasService } from './historietas/mis-historietas/historietas-service';
+import { SearchPipe } from './colegas/buscador/searchpipe';
 
 const appRoutes: Routes = [
   { path: 'historietas', component: HistorietasComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     EventosComponent,
     DatosComponent,
     ColeguillasComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
